@@ -1,0 +1,9 @@
+{	
+	"ZombiesDescription" : "zombies",
+	"MaxZombieCount" : 22,
+	"EnableAdvancedZombieTracking" : true,		
+	"ZombieTags" : [
+		{ "Name" : "Bob", "Weight": 12},
+		{ "Name" : "Hank", "Weight": 34}
+	]
+}

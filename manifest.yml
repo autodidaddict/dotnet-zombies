@@ -1,0 +1,8 @@
+applications:
+- path: .
+  memory: 512MB
+  random-route: true
+  instances: 1
+  name: zombies-service
+  disk_quota: 1024M 
+  buildpack: https://github.com/cloudfoundry-community/asp.net5-buildpack
