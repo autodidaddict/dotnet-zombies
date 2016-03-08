@@ -5,6 +5,7 @@ This is an extremely simple *Hello World* microservice using ASP.NET Core. As of
 To build this app with RC1:
 
 `dnu restore`
+
 `dnx web`
 
 If you find that you have a permissions issue doing either of these commands, `sudo` them.
