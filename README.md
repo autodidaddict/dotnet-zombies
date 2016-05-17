@@ -1,14 +1,12 @@
 # dotnet-zombies
 
-This is an extremely simple *Hello World* microservice using ASP.NET Core. As of this moment, it is built using *coreclr* ASP.NET 5 *RC1*. I will be updating it as ASP.NET revs versions.
+This is an extremely simple *Hello World* microservice using ASP.NET Core. As of this moment, it is built using *coreclr* ASP.NET Core *RC2*.
 
-To build this app with RC1:
+To build this app with RC2:
 
-`dnu restore`
+`dotnet restore`
 
-`dnx web`
-
-If you find that you have a permissions issue doing either of these commands, `sudo` them.
+`dotnet run`
 
 With the app running, you can hit `/api/zombies` on that app with `GET` to test the resource. You'll notice some interesting console output showing the dependency injection at work for services.
 
