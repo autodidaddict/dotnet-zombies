@@ -29,7 +29,7 @@ namespace SampleMicroservice
         {
             services.AddMvc();
             services.AddOptions();
-            services.Configure<ZombieOptions>(Configuration);
+            services.Configure<ZombieOptions>(Configuration);            
 
             services.AddScoped<IZombieRepository, ZombieRepository>();
             services.AddSingleton<IGlobalCounter, GlobalCounter>();
