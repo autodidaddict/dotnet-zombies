@@ -15,7 +15,6 @@ namespace SampleMicroservice
     {
         public Startup(IHostingEnvironment env)
         {
-            // Set up configuration sources.
             var builder = new ConfigurationBuilder()
                 .SetBasePath(env.ContentRootPath)
                 .AddJsonFile("appsettings.json", optional: true, reloadOnChange: false)
@@ -26,10 +25,8 @@ namespace SampleMicroservice
 
         public IConfigurationRoot Configuration { get; set; }
 
-        // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            // Add framework services.
             services.AddMvc();
             services.AddOptions();
             services.Configure<ZombieOptions>(Configuration);
@@ -38,16 +35,10 @@ namespace SampleMicroservice
             services.AddSingleton<IGlobalCounter, GlobalCounter>();
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
-
-//            app.UseIISPlatformHandler();
-
-  //          app.UseStaticFiles();
-
             app.UseMvc();
         }
     }
