@@ -1,11 +1,9 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 
 namespace SampleMicroservice
 {
-	public class ZombieTag {
+    public class ZombieTag {
 		public String Name { get; set; }
 		public int Weight { get; set; }
 	}
