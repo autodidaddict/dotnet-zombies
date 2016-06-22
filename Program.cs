@@ -1,5 +1,3 @@
-using System;
-using System.Collections.Generic;
 using System.IO;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Builder;
@@ -8,7 +6,7 @@ using Microsoft.Extensions.Configuration;
 namespace SampleMicroservice
 {
 
-  public class Program
+    public class Program
   {
     public static void Main(string[] args)
     {

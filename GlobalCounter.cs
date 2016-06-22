@@ -1,8 +1,6 @@
-using System;
-
-namespace SampleMicroservice 
+namespace SampleMicroservice
 {
-	public interface IGlobalCounter 
+    public interface IGlobalCounter 
 	{
 		int Count { get; }
 		void Increment();

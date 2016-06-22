@@ -1,13 +1,11 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
 
 namespace SampleMicroservice.Controllers
 {
-	[Route("api/zombies")]
+    [Route("api/zombies")]
 	public class ZombieController
 	{
 		private IZombieRepository repository;
