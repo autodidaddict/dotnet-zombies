@@ -5,4 +5,4 @@ applications:
   instances: 1
   name: zombies-service
   disk_quota: 1024M 
-  buildpack: https://github.com/cloudfoundry-community/asp.net5-buildpack
+  buildpack: https://github.com/cloudfoundry-community/dotnet-core-buildpack
