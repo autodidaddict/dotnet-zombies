@@ -1,0 +1,29 @@
+box: dotnetcoreservices/dotnet:latest
+no-response-timeout: 10
+build:
+  steps: 
+    - script:
+        name: restore        
+        code: |
+          dotnet restore
+    - script:
+        name: build        
+        code: |
+          dotnet build  
+    - script:
+        name: publish        
+        code: |
+          dotnet publish -o publish
+    - script:
+        name: copy binary
+        code: |
+          cp -r . $WERCKER_OUTPUT_DIR/app 
+deploy:
+  steps:
+    - internal/docker-push:
+        cwd: $WERCKER_OUTPUT_DIR/app
+        username: $USERNAME
+        password: $PASSWORD
+        repository: kotancode/zombies-service
+        registry: https://registry.hub.docker.com
+        entrypoint: "/pipeline/source/app/docker_entrypoint.sh"
