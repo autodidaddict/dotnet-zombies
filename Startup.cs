@@ -3,6 +3,8 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using Steeltoe.Extensions.Configuration;
+using Steeltoe.Extensions.Configuration.CloudFoundry;
 
 namespace SampleMicroservice
 {
@@ -14,7 +16,8 @@ namespace SampleMicroservice
                 .SetBasePath(env.ContentRootPath)
                 .AddJsonFile("appsettings.json", optional: true, reloadOnChange: false)
                 .AddJsonFile("ZombieConfig.json", optional: true, reloadOnChange: false)
-                .AddEnvironmentVariables();
+                .AddEnvironmentVariables()
+                .AddCloudFoundry();
                 
             Configuration = builder.Build();
         }
@@ -29,6 +32,9 @@ namespace SampleMicroservice
 
             services.AddScoped<IZombieRepository, ZombieRepository>();
             services.AddSingleton<IGlobalCounter, GlobalCounter>();
+            
+            services.Configure<CloudFoundryApplicationOptions>(Configuration);
+            services.Configure<CloudFoundryServicesOptions>(Configuration);
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
