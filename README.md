@@ -2,9 +2,9 @@
 
 # dotnet-zombies
 
-This is an extremely simple *Hello World* microservice using ASP.NET Core. As of this moment, it is built using *coreclr* ASP.NET Core *RC2*.
+This is an extremely simple *Hello World* microservice using ASP.NET Core. 
 
-To build this app with RC2:
+To build this app:
 
 `dotnet restore`
 
@@ -14,6 +14,9 @@ With the app running, you can hit `/api/zombies` on that app with `GET` to test 
 
 To push this application to any Cloud Foundry:
 ```
+dotnet publish -o publish
+cd publish
+(copy your configuration/json files into the publish dir)
 cf push
 ```
 
