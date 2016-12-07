@@ -44,7 +44,7 @@ namespace SampleMicroservice.Controllers
 		private void DumpBoundServices() {
 			foreach (var svc in serviceOptions.Services) {
 				Console.WriteLine(svc.Name + "/" + svc.Label);
-				Console.WriteLine("\t" + svc.Credentials.ToString());
+				Console.WriteLine("\t" + svc.Credentials.ToString());				
 			}
 		}
 	}
