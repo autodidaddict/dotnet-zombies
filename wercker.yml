@@ -15,6 +15,11 @@ build:
         code: |
           dotnet publish -o publish
     - script:
+        name: copy settings
+        code: |
+          cp ZombieConfig.json publish
+          cp appsettings.json publish
+    - script:
         name: copy binary        
         code: |
           cp -r . $WERCKER_OUTPUT_DIR/app

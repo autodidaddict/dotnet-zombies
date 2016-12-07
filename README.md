@@ -1,3 +1,5 @@
+[![wercker status](https://app.wercker.com/status/1c8b7c7ff8f3dbcfdd5a2467bec0efbb/m/master "wercker status")](https://app.wercker.com/project/byKey/1c8b7c7ff8f3dbcfdd5a2467bec0efbb)
+
 # dotnet-zombies
 
 This is an extremely simple *Hello World* microservice using ASP.NET Core. As of this moment, it is built using *coreclr* ASP.NET Core *RC2*.
